@@ -287,6 +287,7 @@ local0                            0        down
 </i>
 </pre>
 
+
 2. Execute Python script to List the interfaces using VPP's Python API (PAPI)
 
 </pre>
@@ -318,7 +319,7 @@ host-vpp1
  </pre>
  
 
-###Additional Exercise:###
+### Additional Exercise:###
 
 #### Create veth pairing between VPP and Docker ####
 
