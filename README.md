@@ -363,10 +363,7 @@ host-vpp1 </i>
 <b>
 sudo vppctl set interface state  host-vpp1 up
 sudo vppctl set interface ip address host-vpp1 172.16.1.1/24
-</b>
-
-
-<b>sudo vppctl show int  address</b>
+sudo vppctl show int  address</b>
 <i>
 GigabitEthernet0/8/0 (up):
   172.28.128.3/24
@@ -380,7 +377,7 @@ local0 (dn):
 4. List docker images
 
 <pre>
-</b>sudo docker images</b>
+<b>sudo docker images</b>
 <i>
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              665ffb03bfae        7 days ago          3.97 MB
