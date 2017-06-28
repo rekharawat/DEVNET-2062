@@ -16,9 +16,9 @@ A Vagrant Ubuntu 16.04 (Xenial) box setup having VPP and associated packages pre
 
 Login into the Ubuntu VM (srhost.box) using the following command:
 
-```
-vagrant ssh
-```
+<pre>
+<b>vagrant ssh</b>
+</pre>
 ## Steps ##
 
 ### Whitelisting Linux interface via VPP ###
@@ -57,14 +57,9 @@ ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial    
 <b>sudo vppctl show version </b>
 
 vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Apr 21 15:57:33 UTC 2017
-<pre>
+</pre>
 
-Check the interfaces provided by VPP:
-sudo vppctl show interface
-              Name               Idx       State          Counter          Count
-local0                            0        down
-
-Check interfaces on the host ( Examine interface enp0s8 - its state is UP)
+3. Check interfaces on the SRHost box machine. (Examine the interface <b>enp0s8</b> - its state is UP)
  inet 172.28.128.3/24 
 $ ip addr
 
