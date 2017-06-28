@@ -239,7 +239,11 @@ PING 172.28.128.3 (172.28.128.3): 56 data bytes
 2 packets transmitted, 2 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 0.164/0.315/0.465/0.151 ms
 
+</pre>
 
+3. Examine the ip arp table in VPP
+
+<pre>
 $</i> <b>vagrant ssh </b>
 
 <i>Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-47-generic x86_64)
@@ -247,18 +251,6 @@ $</i> <b>vagrant ssh </b>
 &ltsnip&gt
 vagrant@ubuntu-xenial:~$
 vagrant@ubuntu-xenial:~$</i>
-
-<b>sudo vppctl show ip arp</b>
-<i>
-    Time           IP4       Flags      Ethernet              Interface
-    168.8754  172.28.128.1    DN    0a:00:27:00:00:00   GigabitEthernet0/8/0
-
-</i>
-</pre>
-
-3. Examine the ip arp table in VPP
-
-<pre>
 
 <b>
 sudo vppctl show ip arp </b>
