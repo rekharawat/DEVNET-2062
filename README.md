@@ -27,18 +27,14 @@ vagrant ssh
 
 1. Execute the following command to see what relevant packages are installed on the box:
 
-
-sample  sample
-
-
 <pre>
-workshop/show-pkgs
+<b>workshop/show-pkgs</b>
 
 Current working directory:
 /home/vagrant
 
 
-<b>Ubuntu Release Version:</b>
+Ubuntu Release Version:
 No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu 16.04.1 LTS
@@ -46,7 +42,7 @@ Release:	<b>16.04</b>
 Codename:	xenial
 
 
-<b>Vpp and Docker Package Info:</b>
+Vpp and Docker Package Info:
 ii  vpp                              17.04-release                              amd64        Vector Packet Processing--executables
 ii  vpp-api-python                   17.04-release                              amd64        VPP Python API bindings
 ii  vpp-dpdk-dkms                    17.01.1-release                            amd64        DPDK 2.1 igb_uio_driver
