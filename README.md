@@ -223,7 +223,37 @@ local0 (dn):
 2.Exit the VM (srhost.box) and ping the interface from outside.
 
 <pre>
-ping 172.28.128.3
+vagrant@ubuntu-xenial:/etc/vpp$ <b>exit</b>
+<i>logout
+Connection to 127.0.0.1 closed.
+
+
+
+$</i> <b>ping 172.28.128.3 </b?
+<i>
+PING 172.28.128.3 (172.28.128.3): 56 data bytes
+64 bytes from 172.28.128.3: icmp_seq=0 ttl=64 time=0.465 ms
+64 bytes from 172.28.128.3: icmp_seq=1 ttl=64 time=0.164 ms
+^C
+--- 172.28.128.3 ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.164/0.315/0.465/0.151 ms
+
+
+$</i> <b>vagrant ssh </b>
+
+<i>Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-47-generic x86_64)
+
+&ltsnip&gt
+vagrant@ubuntu-xenial:~$
+vagrant@ubuntu-xenial:~$</i>
+
+<b>sudo vppctl show ip arp</b>
+<i>
+    Time           IP4       Flags      Ethernet              Interface
+    168.8754  172.28.128.1    DN    0a:00:27:00:00:00   GigabitEthernet0/8/0
+
+</i>
 <pre>
 
 3. Examine the ip arp table in VPP
