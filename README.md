@@ -254,7 +254,7 @@ vagrant@ubuntu-xenial:~$</i>
     168.8754  172.28.128.1    DN    0a:00:27:00:00:00   GigabitEthernet0/8/0
 
 </i>
-<pre>
+</pre>
 
 3. Examine the ip arp table in VPP
 
