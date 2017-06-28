@@ -209,8 +209,14 @@ sudo vppctl set interface state GigabitEthernet0/8/0 up</b>
 <i>
               Name               Idx       State          Counter          Count
 GigabitEthernet0/8/0              1         up
-local0                            0        down
+local0                            0        down</i>
 
+
+<b>sudo vppctl show interface address</b>
+<i>
+GigabitEthernet0/8/0 (up):
+  172.28.128.3/24
+local0 (dn):
 </i>
 </pre>
 
