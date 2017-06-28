@@ -131,11 +131,27 @@ pci@<b>0000:00:08.0</b>  enp0s8     network     82540EM Gigabit Ethernet Control
 
 <pre>
 
-<b> cd /etc/vpp 
+<b>cd /etc/vpp 
 
 sudo cp startup.conf.demo startup.conf </b>
 
 </pre>
+
+The above command changed the dpdk section of VPP's startup configuration file file to contain 'dev' entries for the PCI bus information obtained in the previous step. (/etc/vpp/startup.conf ) It placed the following configuration in /etc/vpp/startup.conf file.
+```
+snippet……
+dpdk {
+
+	## Whitelist specific interface by specifying PCI address
+	 dev  0000:00:08.0
+
+
+	## Change UIO driver used by VPP, Options are: igb_uio, vfio-pci
+	## and uio_pci_generic (default)
+	 uio-driver igb_uio
+ }
+```
+
 
 WHITELIST the Interface
 
