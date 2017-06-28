@@ -167,17 +167,31 @@ sudo ip addr flush dev enp0s8</b>
 7. Restart the VPP service
 
 <b>sudo service app restart
+
 sudo service app status
+
 </b>
 
-Assign and IP and bring the interface state to up
-$    sudo vppctl set interface ip address GigabitEthernet0/8/0 172.28.128.3/24
-$    sudo vppctl set interface state GigabitEthernet0/8/0 up
+8. Assign and IP and bring the interface state to up
 
-$   sudo vppctl show interface
+<b>sudo vppctl set interface ip address GigabitEthernet0/8/0 172.28.128.3/24
+
+sudo vppctl set interface state GigabitEthernet0/8/0 up</b>
+
+### VPP Shell/cli ###
+
+1. List the VPP interfaces using the VPP shell/cli
+
+<pre>
+<b>sudo vppctl show interface </b>
+
+<i>
               Name               Idx       State          Counter          Count
 GigabitEthernet0/8/0              1         up
 local0                            0        down
+
+</i>
+</pre>
 
 Go outside container and ping the box 
 ping 172.28.128.3
