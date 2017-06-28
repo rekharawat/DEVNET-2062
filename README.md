@@ -18,6 +18,12 @@ Login into the Ubuntu VM (srhost.box) using the following command:
 
 <pre>
 <b>vagrant ssh</b>
+
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-47-generic x86_64)
+..........
+..........
+vagrant@ubuntu-xenial:~$
+
 </pre>
 
 ## Steps ##
@@ -30,7 +36,6 @@ Login into the Ubuntu VM (srhost.box) using the following command:
 
 <pre>
 <b>workshop/show-pkgs</b>
-
 
 Current working directory:
 /home/vagrant
@@ -54,15 +59,16 @@ ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial    
 
 </pre>
 
+
 2. Check the VPP version (vppctl is the vpp shell). 
 
 <pre>
 <b>sudo vppctl show version </b>
 
-
 vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Apr 21 15:57:33 UTC 2017
 
 </pre>
+
 
 3. Check interfaces on the SRHost box machine. (Examine the interface <b>enp0s8</b> - its state is UP)
 
@@ -72,12 +78,16 @@ vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Ap
 
 </pre>
 
-Note the PCI bus  information associated with this interface enp0s8
-$ sudo lshw -class network -businfo
+4. Note the PCI bus information associated with this interface <b>enp0s8</b>
+
+<pre>
+<b>sudo lshw -class network -businfo </b>
 Bus info          Device     Class       Description
 ====================================================
 pci@0000:00:03.0  enp0s3     network     82540EM Gigabit Ethernet Controller
 pci@0000:00:08.0  enp0s8     network     82540EM Gigabit Ethernet Controller
+
+</pre>
 
 Change current dir to /etc/vpp
 Put the PCI interface in VPPs startup configuration file  ( /etc/vpp/startup.conf )
