@@ -59,6 +59,7 @@ ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial    
 </pre>
 
 
+
 2. Display the VPP version (vppctl is the vpp shell). 
 
 <pre>
@@ -95,7 +96,7 @@ enp0s3    Link encap:Ethernet  HWaddr 02:8c:e2:cf:b5:33
 <b>enp0s8</b>    Link encap:Ethernet  HWaddr 08:00:27:f3:59:d7
           inet addr:172.28.128.4  Bcast:172.28.128.255  Mask:255.255.255.0
           inet6 addr: fe80::a00:27ff:fef3:59d7/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          <b>UP</b> BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:20 errors:0 dropped:0 overruns:0 frame:0
           TX packets:21 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000
