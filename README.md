@@ -51,8 +51,13 @@ ii  vpp-plugins                      17.04-release             �
 ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial                 amd64        Docker: the open-source application container engine
 </pre>
 
-sudo vppctl show version
+2. Check the VPP version (vppctl is the vpp shell). 
+
+<pre>
+<b>sudo vppctl show version </b>
+
 vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Apr 21 15:57:33 UTC 2017
+<pre>
 
 Check the interfaces provided by VPP:
 sudo vppctl show interface
