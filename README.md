@@ -331,7 +331,7 @@ host-vpp1
 1. Create a Linux veth pair. 
 
 <pre>
-</b>sudo ip link add name veth_vpp1 type veth peer name vpp1
+<b>sudo ip link add name veth_vpp1 type veth peer name vpp1
 ip link show </b>
 <i>
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
