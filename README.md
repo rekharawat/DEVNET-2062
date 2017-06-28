@@ -316,7 +316,7 @@ host-vpp1
  </pre>
  
 
-### Additional Exercise: ###
+### Optional Exercise: ###
 
 #### Create veth pairing between VPP and Docker ####
 
