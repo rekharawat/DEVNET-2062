@@ -425,7 +425,7 @@ sudo docker run --name=guest_container --net=vpp1_net --ip=172.16.1.101 -it alpi
 </i>
 </pre>
 
-### Useful Information ###
+### GitHub Repository Information ###
 
 GitHub Repository:  https://github.com/cisco-ie/sr-host-networking
 
