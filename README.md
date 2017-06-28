@@ -137,7 +137,7 @@ sudo cp startup.conf.demo startup.conf </b>
 
 </pre>
 
-The above command changed the dpdk section of VPP's startup configuration file file to contain 'dev' entries for the PCI bus information obtained in the previous step. (/etc/vpp/startup.conf ) It placed the following configuration in /etc/vpp/startup.conf file.
+The above command changes the dpdk section of VPP's startup configuration file to contain 'dev' entries for the PCI bus information obtained in the previous step. It placed the following configuration in /etc/vpp/startup.conf file.
 ```
 snippet……
 dpdk {
