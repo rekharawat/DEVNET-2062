@@ -27,6 +27,10 @@ vagrant ssh
 
 1. Execute the following command to see what relevant packages are installed on the box:
 
+<pre>
+sample <b>sample</b> sample
+</pre>
+
 ```
 workshop/show-pkgs
 
