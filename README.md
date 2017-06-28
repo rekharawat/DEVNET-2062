@@ -159,7 +159,7 @@ dpdk {
 </pre>
 
 
-6. Bring the VPP interface down 
+6. Set interface state for <b> enp0s8 </b> to DOWN and flush it
 
 <pre>
 <b>sudo ifconfig enp0s8 down
