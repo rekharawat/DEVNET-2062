@@ -268,11 +268,14 @@ sudo vppctl show ip arp </b>
 </i>
 </pre>
 
-### Python (List interfaces) ###
 
-1. List interface using shell/cli
+### Python - PAPI Interface in VPP ###
+
+
+1. List the VM's interfaces using the vppctl shell/cli
 
 <pre>
+
 <b>sudo vppctl show interface</b>
 <i>
 
@@ -319,10 +322,12 @@ host-vpp1
 
 #### Create veth pairing between VPP and Docker ####
 
-Create a Linux veth pair. 
+1. Create a Linux veth pair. 
 
-$ sudo ip link add name veth_vpp1 type veth peer name vpp1
-$ ip link show
+<pre>
+</b>sudo ip link add name veth_vpp1 type veth peer name vpp1
+ip link show </b>
+<i>
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
@@ -333,42 +338,72 @@ $ ip link show
     link/ether ce:18:0a:5a:ef:4f brd ff:ff:ff:ff:ff:ff
 6: veth_vpp1@vpp1: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
     link/ether 7e:b0:de:56:a1:3c brd ff:ff:ff:ff:ff:ff
+</i>
+</pre>
 
-Create a host pair that will attach to a Linux AF_PACKET interface, one side of a veto pair.
 
-$ sudo vppctl create host-interface name vpp1
-host-vpp1
+2. Create a host pair that will attach to a Linux AF_PACKET interface, one side of the veth pair.
 
-Give an ip address to the interface and turn it on
-    sudo vppctl set interface state  host-vpp1 up
-$ sudo vppctl set interface ip address host-vpp1 172.16.1.1/24
+<pre>
+<b>sudo vppctl create host-interface name vpp1 </b>
+<i>
+host-vpp1 </i>
 
-$ sudo vppctl show int  address
+</pre>
+
+3. Give an ip address to the interface and change its state to up
+
+<pre>
+<b>
+sudo vppctl set interface state  host-vpp1 up
+sudo vppctl set interface ip address host-vpp1 172.16.1.1/24
+</b>
+
+
+<b>sudo vppctl show int  address<b>
+<i>
 GigabitEthernet0/8/0 (up):
   172.28.128.3/24
 host-vpp1 (up):
   172.16.1.1/24
 local0 (dn):
+</i>
+</pre>
 
-List docker images
-$ sudo docker images
+
+4. List docker images
+
+<pre>
+</b>sudo docker images</b>
+<i>
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              665ffb03bfae        7 days ago          3.97 MB
+</i>
+</pre>
 
-$   sudo docker network create -d macvlan --subnet=172.16.1.0/24 --gateway=172.16.1.1 -o parent=veth_vpp1 vpp1_net
 
-$ sudo docker network ls
+5. Create docker network to plumb docker side to the veth pair
+
+<pre>
+<b>sudo docker network create -d macvlan --subnet=172.16.1.0/24 --gateway=172.16.1.1 -o parent=veth_vpp1 vpp1_net
+
+sudo docker network ls  </b>
+<i>
 NETWORK ID          NAME                DRIVER              SCOPE
 c1ca29db93b5        bridge              bridge              local
 4a195de3a0e4        host                host                local
 c1ab80322571        none                null                local
 91d993c13757        vpp1_net            macvlan             local
+</i>
+</pre>
 
+6. Launch the Docker Container and show its “ip address” from inside the container.
 
-Launch the Docker Container and run “ip address” from inside the container.
- $  sudo docker rm -f $(sudo docker ps -a -q)
-$ sudo docker run --name=guest_container --net=vpp1_net --ip=172.16.1.101 -it alpine /bin/sh
+<pre>
+<b>sudo docker rm -f $(sudo docker ps -a -q)
 
+sudo docker run --name=guest_container --net=vpp1_net --ip=172.16.1.101 -it alpine /bin/sh </b>
+<i>
 / # ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -380,6 +415,9 @@ $ sudo docker run --name=guest_container --net=vpp1_net --ip=172.16.1.101 -it al
     link/ether 02:42:ac:10:01:65 brd ff:ff:ff:ff:ff:ff
     inet 172.16.1.101/24 scope global eth0
        valid_lft forever preferred_lft forever
+       
+</i>
+</pre>
 
 
 
