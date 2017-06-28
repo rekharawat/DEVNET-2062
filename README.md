@@ -142,7 +142,7 @@ sudo cp startup.conf.demo startup.conf </b>
 </pre>
 
 The above command changes the dpdk section of VPP's startup configuration file to contain 'dev' entries for the PCI bus information obtained in the previous step. It placed the following configuration in /etc/vpp/startup.conf file.
-```
+<pre>
 <i>.....
 &ltsnip&gt
 dpdk {
@@ -156,17 +156,19 @@ dpdk {
 	 uio-driver igb_uio
  }
  <i>
-```
+</pre>
 
 
-WHITELIST the Interface
+6. Bring the VPP interface down 
 
-Bring the VPP interface down and restart the VPP service
+<b>sudo ifconfig enp0s8 down
+sudo ip addr flush dev enp0s8</b>
 
-$   sudo ifconfig enp0s8 down
-$   sudo ip addr flush dev enp0s8
+7. Restart the VPP service
 
-sudo service app restart
+<b>sudo service app restart
+sudo service app status
+</b>
 
 Assign and IP and bring the interface state to up
 $    sudo vppctl set interface ip address GigabitEthernet0/8/0 172.28.128.3/24
