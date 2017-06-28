@@ -174,7 +174,6 @@ sudo ip addr flush dev enp0s8</b>
 <b>sudo service app restart
 
 sudo service app status
-
 </b>
 </pre>
 
@@ -184,6 +183,7 @@ sudo service app status
 <b>sudo vppctl set interface ip address GigabitEthernet0/8/0 172.28.128.3/24
 
 sudo vppctl set interface state GigabitEthernet0/8/0 up</b>
+
 </pre>
 
 ### VPP Shell/cli ###
