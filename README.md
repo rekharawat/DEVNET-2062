@@ -186,7 +186,9 @@ sudo vppctl set interface state GigabitEthernet0/8/0 up</b>
 
 </pre>
 
+
 ### VPP Shell/cli ###
+
 
 1. List the VPP interfaces using the VPP shell/cli
 
