@@ -19,6 +19,7 @@ Login into the Ubuntu VM (srhost.box) using the following command:
 <pre>
 <b>vagrant ssh</b>
 </pre>
+
 ## Steps ##
 
 ### Whitelisting Linux interface via VPP ###
@@ -29,6 +30,7 @@ Login into the Ubuntu VM (srhost.box) using the following command:
 
 <pre>
 <b>workshop/show-pkgs</b>
+
 
 Current working directory:
 /home/vagrant
@@ -49,6 +51,7 @@ ii  vpp-dpdk-dkms                    17.01.1-release             
 ii  vpp-lib                          17.04-release                              amd64        Vector Packet Processing--runtime libraries
 ii  vpp-plugins                      17.04-release                              amd64        Vector Packet Processing--runtime plugins
 ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial                 amd64        Docker: the open-source application container engine
+
 </pre>
 
 2. Check the VPP version (vppctl is the vpp shell). 
@@ -56,12 +59,18 @@ ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial    
 <pre>
 <b>sudo vppctl show version </b>
 
+
 vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Apr 21 15:57:33 UTC 2017
+
 </pre>
 
 3. Check interfaces on the SRHost box machine. (Examine the interface <b>enp0s8</b> - its state is UP)
- inet 172.28.128.3/24 
-$ ip addr
+
+<pre>
+<b>ip address</b>
+
+
+</pre>
 
 Note the PCI bus  information associated with this interface enp0s8
 $ sudo lshw -class network -businfo
