@@ -78,7 +78,7 @@ ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial    
 <b>ifconfig</b>
 
 
-docker0   Link encap:Ethernet  HWaddr 02:42:8a:f8:a9:6a
+<i>docker0   Link encap:Ethernet  HWaddr 02:42:8a:f8:a9:6a
           inet addr:172.17.0.1  Bcast:0.0.0.0  Mask:255.255.0.0
           UP BROADCAST MULTICAST  MTU:1500  Metric:1
           RX packets:0 errors:0 dropped:0 overruns:0 frame:0
@@ -113,7 +113,7 @@ lo        Link encap:Local Loopback
           collisions:0 txqueuelen:1
           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 
-
+<i>
 </pre>
 
 4. Note the PCI bus information associated with the interface <b>enp0s8</b>
@@ -122,11 +122,13 @@ lo        Link encap:Local Loopback
 
 <b>sudo lshw -class network -businfo </b>
 
+<i>
 Bus info          Device     Class       Description
 ====================================================
 pci@0000:00:03.0  enp0s3     network     82540EM Gigabit Ethernet Controller
 pci@<b>0000:00:08.0</b>  enp0s8     network     82540EM Gigabit Ethernet Controller
 
+<i>
 </pre>
 
 5. Change current dir to /etc/vpp. Then execute the following command to create the correct startup configuration file:
@@ -141,7 +143,8 @@ sudo cp startup.conf.demo startup.conf </b>
 
 The above command changes the dpdk section of VPP's startup configuration file to contain 'dev' entries for the PCI bus information obtained in the previous step. It placed the following configuration in /etc/vpp/startup.conf file.
 ```
-snippet……
+<i>.....
+&ltsnip&gt
 dpdk {
 
 	## Whitelist specific interface by specifying PCI address
@@ -152,6 +155,7 @@ dpdk {
 	## and uio_pci_generic (default)
 	 uio-driver igb_uio
  }
+ <i>
 ```
 
 
