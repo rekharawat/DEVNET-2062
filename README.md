@@ -425,9 +425,18 @@ sudo docker run --name=guest_container --net=vpp1_net --ip=172.16.1.101 -it alpi
 </i>
 </pre>
 
+### Useful Information ###
+
+GitHub Repository:  https://github.com/cisco-ie/sr-host-networking
+Contact Information: Rekha Rawat 
+Email: rrawat@cisco.com
 
 
+#### Useful Links ####
 
+FD.io VPP Wiki: https://wiki.fd.io/view/VPP
+VPP Python API: https://wiki.fd.io/view/VPP/Python_API
+GoBGP: https://github.com/osrg/gobgp  
 
 
 
