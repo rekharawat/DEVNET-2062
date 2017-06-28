@@ -366,7 +366,7 @@ sudo vppctl set interface ip address host-vpp1 172.16.1.1/24
 </b>
 
 
-<b>sudo vppctl show int  address<b>
+<b>sudo vppctl show int  address</b>
 <i>
 GigabitEthernet0/8/0 (up):
   172.28.128.3/24
