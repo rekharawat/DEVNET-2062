@@ -20,7 +20,7 @@ Login into the Ubuntu VM (srhost.box) using the following command:
 <b>vagrant ssh</b>
 
 Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-47-generic x86_64)
-\<snip>
+<snip>
 vagrant@ubuntu-xenial:~$
 
 </pre>
