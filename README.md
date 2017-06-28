@@ -73,7 +73,7 @@ vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Ap
 3. List the interfaces on the SRHost box machine. (Examine the interface <b>enp0s8</b> - its state is UP)
 
 <pre>
-<b>ip address</b>
+<b>ifconfig</b>
 
 
 docker0   Link encap:Ethernet  HWaddr 02:42:8a:f8:a9:6a
@@ -114,34 +114,28 @@ lo        Link encap:Local Loopback
 
 </pre>
 
-4. Note the PCI bus information associated with this interface <b>enp0s8</b>
+4. Note the PCI bus information associated with the interface <b>enp0s8</b>
 
 <pre>
+
 <b>sudo lshw -class network -businfo </b>
+
 Bus info          Device     Class       Description
 ====================================================
 pci@0000:00:03.0  enp0s3     network     82540EM Gigabit Ethernet Controller
-pci@0000:00:08.0  enp0s8     network     82540EM Gigabit Ethernet Controller
+pci@<b>0000:00:08.0</b>  enp0s8     network     82540EM Gigabit Ethernet Controller
 
 </pre>
 
-Change current dir to /etc/vpp
-Put the PCI interface in VPPs startup configuration file  ( /etc/vpp/startup.conf )
-snippet……
-dpdk {
+5. Change current dir to /etc/vpp. Then execute the following command to create the correct startup configuration file:
 
-	## Whitelist specific interface by specifying PCI address
-	 dev  0000:00:08.0
+<pre>
 
+<b> cd /etc/vpp 
 
-	## Change UIO driver used by VPP, Options are: igb_uio, vfio-pci
-	## and uio_pci_generic (default)
-	 uio-driver igb_uio
- }
+sudo cp startup.conf.demo startup.conf </b>
 
-Execute the following command to create the correct startup configuration file:
-$ cd /etc/vpp/
-vagrant@ubuntu-xenial:/etc/vpp$ sudo cp startup.conf.demo startup.conf
+</pre>
 
 WHITELIST the Interface
 
