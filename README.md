@@ -182,9 +182,9 @@ ip link show</b>
 
 <pre>
 
-<b>sudo service app restart
+<b>sudo service vpp restart
 
-sudo service app status
+sudo service vpp status
 </b>
 </pre>
 
