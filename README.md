@@ -269,10 +269,13 @@ sudo vppctl show ip arp </b>
 </pre>
 
 
+
 ### Python - PAPI Interface in VPP ###
 
 
+
 1. List the VM's interfaces using the vppctl shell/cli
+
 
 <pre>
 
@@ -288,11 +291,13 @@ local0                            0        down
 </pre>
 
 
+
 2. Execute Python script to List the interfaces using VPP's Python API (PAPI)
 
 </pre>
 
-<b> cd ; sudo workshop/test-papi.py </b>
+
+<b> sudo workshop/test-papi.py </b>
 
 <i>
  Connecting to VPP instance
