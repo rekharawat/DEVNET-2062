@@ -229,7 +229,7 @@ Connection to 127.0.0.1 closed.
 
 
 
-$</i> <b>ping 172.28.128.3 </b?
+$</i> <b>ping 172.28.128.3 </b>
 <i>
 PING 172.28.128.3 (172.28.128.3): 56 data bytes
 64 bytes from 172.28.128.3: icmp_seq=0 ttl=64 time=0.465 ms
@@ -268,7 +268,56 @@ sudo vppctl show ip arp </b>
 </i>
 </pre>
 
-DOCKER:
+### Python (List interfaces) ###
+
+1. List interface using shell/cli
+
+<pre>
+<b>sudo vppctl show interface</b>
+<i>
+
+              Name               Idx       State          Counter          Count
+GigabitEthernet0/8/0              1         up
+host-vpp1                         2         up
+local0                            0        down
+
+</i>
+</pre>
+
+2. Execute Python script to List the interfaces using VPP's Python API (PAPI)
+
+</pre>
+
+<b> cd ; sudo workshop/test-papi.py </b>
+
+<i>
+ Connecting to VPP instance
+
+
+
+
+ VPP show version:
+ 17.04-release
+
+
+
+
+The interfaces in the VPP instance are:
+local0
+GigabitEthernet0/8/0
+host-vpp1
+
+
+
+ Disconnecting from VPP instance
+ 
+ </i>
+ </pre>
+ 
+
+###Additional Exercise:###
+
+#### Create veth pairing between VPP and Docker ####
 
 Create a Linux veth pair. 
 
@@ -332,33 +381,6 @@ $ sudo docker run --name=guest_container --net=vpp1_net --ip=172.16.1.101 -it al
     inet 172.16.1.101/24 scope global eth0
        valid_lft forever preferred_lft forever
 
-Python (List interfaces)
-$ sudo vppctl show interface
-              Name               Idx       State          Counter          Count
-GigabitEthernet0/8/0              1         up
-host-vpp1                         2         up
-local0                            0        down
-
-$ sudo workshop/test-papi.py
- Connecting to VPP instance
-
-
-
-
- VPP show version:
- 17.04-release
-
-
-
-
-The interfaces in the VPP instance are:
-local0
-GigabitEthernet0/8/0
-host-vpp1
-
-
-
- Disconnecting from VPP instance
 
 
 
