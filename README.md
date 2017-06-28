@@ -9,18 +9,21 @@ This documentation provides hands on examples of the SR Host Networking demonstr
 ## Setup ##
 
 Password for Mac Machines is cisco123
+
 Change dir to ~/labuser/devnet-rekha
+
 A Vagrant Ubuntu 16.04 (Xenial) box setup having VPP and associated packages pre-installed is running on your workbench. 
+
 Login into the Ubuntu VM (srhost.box) using the following command:
 
 ```
 vagrant ssh
-
+```
 ## Steps ##
 
 ### Whitelisting Linux interface via VPP ###
 
-```
+
 
 1. Execute the following command to see what relevant packages are installed on the box:
 
