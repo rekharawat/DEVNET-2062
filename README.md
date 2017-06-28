@@ -14,11 +14,14 @@ A Vagrant Ubuntu 16.04 (Xenial) box setup having VPP and associated packages pre
 
 ### Whitelisting Linux interface via VPP ###
 
-Execute the following cli to gain access to the Demo box:
 
-vagrant ssh
+1. Login into the Ubuntu VM (srhost.box) using the following command:
 
+```vagrant ssh```
 
+2. Print the working dir
+
+```pwd```
 Execute the following command to see what relevant packages are installed on the box:
 sudo vppctl show version
 vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Apr 21 15:57:33 UTC 2017
