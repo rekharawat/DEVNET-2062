@@ -59,7 +59,7 @@ ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial    
 </pre>
 
 
-2. Check the VPP version (vppctl is the vpp shell). 
+2. Display the VPP version (vppctl is the vpp shell). 
 
 <pre>
 <b>sudo vppctl show version </b>
@@ -69,10 +69,46 @@ vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Ap
 </pre>
 
 
-3. Check interfaces on the SRHost box machine. (Examine the interface <b>enp0s8</b> - its state is UP)
+3. List the interfaces on the SRHost box machine. (Examine the interface <b>enp0s8</b> - its state is UP)
 
 <pre>
 <b>ip address</b>
+
+
+docker0   Link encap:Ethernet  HWaddr 02:42:8a:f8:a9:6a
+          inet addr:172.17.0.1  Bcast:0.0.0.0  Mask:255.255.0.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+enp0s3    Link encap:Ethernet  HWaddr 02:8c:e2:cf:b5:33
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::8c:e2ff:fecf:b533/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:886 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:671 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:86672 (86.6 KB)  TX bytes:88364 (88.3 KB)
+
+<b>enp0s8</b>    Link encap:Ethernet  HWaddr 08:00:27:f3:59:d7
+          inet addr:172.28.128.4  Bcast:172.28.128.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fef3:59d7/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:20 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:21 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:4424 (4.4 KB)  TX bytes:2996 (2.9 KB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 
 
 </pre>
