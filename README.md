@@ -163,8 +163,19 @@ dpdk {
 
 <pre>
 <b>sudo ifconfig enp0s8 down
-sudo ip addr flush dev enp0s8</b>
+sudo ip addr flush dev enp0s8
 
+ip link show</b>
+<i>
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 02:8c:e2:cf:b5:33 brd ff:ff:ff:ff:ff:ff
+    3: <b>enp0s8</b>: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast <b>state DOWN</b> mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:45:90:2c brd ff:ff:ff:ff:ff:ff
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default
+    link/ether 02:42:29:e0:b4:14 brd ff:ff:ff:ff:ff:ff
+    </i>
 </pre>
 
 7. Restart the VPP service
