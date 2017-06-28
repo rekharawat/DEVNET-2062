@@ -38,7 +38,7 @@ vagrant@ubuntu-xenial:~$</i>
 <pre>
 <b>workshop/show-pkgs</b>
 
-Current working directory:
+<i>Current working directory:
 /home/vagrant
 
 
@@ -57,7 +57,7 @@ ii  vpp-dpdk-dkms                    17.01.1-release             
 ii  vpp-lib                          17.04-release                              amd64        Vector Packet Processing--runtime libraries
 ii  vpp-plugins                      17.04-release                              amd64        Vector Packet Processing--runtime plugins
 ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial                 amd64        Docker: the open-source application container engine
-
+<i>
 </pre>
 
 
@@ -67,8 +67,8 @@ ii  docker-ce                        17.03.1~ce-0~ubuntu-xenial    
 <pre>
 <b>sudo vppctl show version </b>
 
-vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Apr 21 15:57:33 UTC 2017
-
+<i>vpp v17.04-release built by jenkins on ubuntu1604-basebuild-4c-4g-2454 at Fri Apr 21 15:57:33 UTC 2017
+<i>
 </pre>
 
 
