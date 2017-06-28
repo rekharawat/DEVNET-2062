@@ -128,7 +128,7 @@ Bus info          Device     Class       Description
 pci@0000:00:03.0  enp0s3     network     82540EM Gigabit Ethernet Controller
 pci@<b>0000:00:08.0</b>  enp0s8     network     82540EM Gigabit Ethernet Controller
 
-<i>
+</i>
 </pre>
 
 5. Change current dir to /etc/vpp. Then execute the following command to create the correct startup configuration file:
