@@ -1,11 +1,18 @@
 # DEVNET-2062 Workshop "Application Engineered Egress Routing"
 
+## Introduction ##
 This documentation provides hands on examples of the demonstration of SR Host Networking provided during the workshop. The following tasks will be performed:
 * Whitelisting(capture) a Linux interface using VPP (Vector Packet Processing)
 * View the interface details via the VPP shell/cli.
 * Execute a Python code snippet to display the same VPP interface information in a programmatic fashion.
 
-. Then, we will view the interface details via the VPP shell/cli. We will run a Python code snippet to display the same VPP interface information in a programmatic fashion.
+## Setup ##
+
+The Vagrant Ubuntu 16.04 (Xenial) box setup having VPP and associated packages pre-installed is running on your workbench. 
+
+## Steps ##
+
+### Whitelisting Linux interface via VPP ###
 
 Execute the following cli to gain access to the Demo box:
 
