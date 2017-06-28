@@ -203,7 +203,7 @@ local0                            0        down
 </i>
 </pre>
 
-2.Exit the SRHost.box and ping the interface
+2.Exit the VM (srhost.box) and ping the interface from outside.
 
 <pre>
 ping 172.28.128.3
