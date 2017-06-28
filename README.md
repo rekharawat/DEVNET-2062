@@ -161,22 +161,30 @@ dpdk {
 
 6. Bring the VPP interface down 
 
+<pre>
 <b>sudo ifconfig enp0s8 down
 sudo ip addr flush dev enp0s8</b>
 
+</pre>
+
 7. Restart the VPP service
+
+<pre>
 
 <b>sudo service app restart
 
 sudo service app status
 
 </b>
+</pre>
 
 8. Assign and IP and bring the interface state to up
 
+<pre>
 <b>sudo vppctl set interface ip address GigabitEthernet0/8/0 172.28.128.3/24
 
 sudo vppctl set interface state GigabitEthernet0/8/0 up</b>
+</pre>
 
 ### VPP Shell/cli ###
 
@@ -193,12 +201,23 @@ local0                            0        down
 </i>
 </pre>
 
-Go outside container and ping the box 
-ping 172.28.128.3
+2.Exit the SRHost.box and ping the interface
 
-sudo vppctl show ip arp
+<pre>
+ping 172.28.128.3
+<pre>
+
+3. Examine the ip arp table in VPP
+
+<pre>
+
+<b>
+sudo vppctl show ip arp </b>
+<i>
     Time           IP4       Flags      Ethernet              Interface
     219.3631  172.28.128.1    DN    0a:00:27:00:00:00   GigabitEthernet0/8/0
+</i>
+</pre>
 
 DOCKER:
 
